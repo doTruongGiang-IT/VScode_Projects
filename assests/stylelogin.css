@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+    font-family: myptsan;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+a{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: myptsan;
+	src: url(ptsans.woff);
+}
+
+@font-face {
+	font-family: mypacifico;
+	src: url(pacifico.woff);
+}
+/* ==============================  Đăng nhập ==============================*/
+.annoucement{
+    margin: 1rem 1rem;
+    width: auto;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    opacity: .8;
+    animation: slide 1.5s linear;
+}
+
+@keyframes slide{
+    from{
+        /* background-position-x:0rem; */
+        left:-40rem;
+    }
+    to{
+        /* background-position-x:10rem; */
+        left:0rem;
+    }
+}
+
+.message{
+    background-color: var(--egg-blue);
+    width: 25rem;
+    height: 10rem;
+    border-radius: .5rem;
+    box-shadow: .1rem .2rem .5rem var(--black-color);
+}
+
+.message span{
+    margin: .2rem .2rem;
+    font-size: 3rem;
+    color: var(--gallery-color);
+}
+
+.message b{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.blur{
+    height: 100vh;
+    background-image: url("../img/background-login2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+    filter: blur(.7rem);
+}
+
+.login{
+    width: 50rem;
+    height: 60rem;
+    background-image: url("../img/background-login2.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    box-shadow: .1rem 3rem 5rem rgba(0, 0, 0, .7);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+}
+
+.btn-box{
+    width: 25rem;
+    height: 4rem;
+    margin:5rem auto;
+    position: relative;
+    box-shadow: 0 0 2rem 1rem #ff61241f;
+    border-radius: 3rem;
+}
+
+.toggle-btn{
+    color: var(--black-color);
+    padding: 3rem;
+    background-color: transparent;
+    cursor: pointer;
+    border:0;
+    position: relative;
+    top:.7rem;
+}
+
+#btn-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12.5rem;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 3rem;
+    transition: all .5s ease;
+}
+
+.Login{
+    position: absolute;
+    top: 18rem;
+    transition: .5s;
+}
+
+.input-login{
+    width: 80%;
+    padding: 1rem 0;
+    margin: 1rem 10%;
+    border:0;
+    border-bottom: .1rem solid #ff105f;
+    outline: none;
+    background: none;
+}
+
+.input-login::placeholder{
+    color: var(--black-color);
+}
+
+.Login span{
+    font-size: 1.8rem;
+    color: var(--black-color);
+    position: relative;
+    top: 5rem;
+    left: 10%;
+}
+
+#reg{
+    position: relative;
+    top: 5rem;
+    left: 10%;
+    font-size: 1.4rem;
+    color: var(--active-color);
+    margin-left: 2rem;
+}
+
+.btn-submit{
+    position: relative;
+    color: var(--black-color);
+    top: 20rem;
+    right:30%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    padding: 1rem 6rem;
+    border-radius: 3rem;
+}
+
+.btn-submit:hover{
+    cursor: pointer;
+}
+
+.btn-reg{
+    position: relative;
+    top: 5rem;
+    left: 30%;
+    color: var(--black-color);
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    padding: 1rem 6rem;
+    border-radius: 3rem;
+}
+
+.btn-reg:hover{
+    cursor: pointer;
+}
+
+#login{
+    left: 0rem;
+    transition: all .5s ease;
+}
+
+#register{
+    left: 50rem;
+    transition: all .5s ease;
+}

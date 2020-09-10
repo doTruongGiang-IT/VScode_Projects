@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+    font-family: myptsan;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 .8rem;
+}
+
+a{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: myptsan;
+	src: url(ptsans.woff);
+}
+
+@font-face {
+	font-family: mypacifico;
+	src: url(pacifico.woff);
+}
+/* ==============================  Header ==============================*/
+
+.header__menu__thucdon{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 100;
+    background-color: var(--black-color);
+}
+
+.header__menu__thucdon img{
+    height: 7rem;
+}
+
+.nav__menu{
+    text-align: right;
+    line-height: 7rem;
+}
+
+.nav__menu li a.active{
+    color: var(--active-color);
+}
+
+.nav__menu li a:hover{
+    color: var(--active-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline{
+    padding: .4rem .5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    background: none;
+    border-radius: .5rem;
+    color: var(--text-color);
+    border: .2rem solid var(--text-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline:hover{
+    background-color: var(--white-color);
+    color: var(--active-color);
+    cursor: pointer;
+}
+
+.nav__menu li a i{
+    font-size: 2.6rem;
+}
+
+.show-on-tablet{
+    display: none;
+}
+
+.menu-icon{
+    height: 0;
+    text-align: left;
+    font-size: 2.6rem;
+    color: var(--text-color);
+    display: none;
+    position: relative;
+    top:-5rem;
+    left:90%;
+    cursor: pointer;
+}
+
+.menu-icon:hover{
+    color: var(--active-color);
+}
+
+.overlay{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    animation: Opa ease-in-out .15s;
+}
+
+@keyframes Opa{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.sub-menu{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 30rem;
+    height: 100vh;
+    background-color: var(--black-color);
+    display: none;
+    transform-origin: 80% 10%;
+    animation: Scale ease-in .2s;
+}
+
+@keyframes Scale{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+.sub-menu ul{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 4rem;
+}
+
+.sub-menu ul li{
+    margin: 1rem 0;
+}
+
+.sub-menu li a{
+    font-size: 3.6rem;
+}
+
+.sub-menu li a:hover{
+    color: var(--active-color);
+}
+
+.close-menu{
+    position: absolute;
+    top:1rem;
+    right: 2rem;
+}
+
+.close-menu i{
+    font-size: 2.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.close-menu i:hover{
+    color: var(--active-color);
+}
+
+/* ==============================  Main ==============================*/
+
+.pic-thucdon {
+    height: 30vh;
+	background-image: url(../img/anh35.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.menu-title{
+    text-align: center;
+}
+
+.menu-title h2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--black-color);
+    padding:2rem 0;
+    font-family: mypacifico;
+}
+
+#btn1, #btn2{
+    padding:.5rem 2rem;
+	color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    outline: none;
+	border: .1rem solid var(--text-color);
+	border-bottom: none;
+    background-color: var(--white-color);
+}
+
+#btn1{
+    border-top: .4rem solid var(--button-color);
+    margin-left: 26%;
+}
+
+.flip__thucdon{
+    position: relative;
+    transform-style: preserve-3d;
+	transition: .7s;
+}
+
+.thucdon__front, .thucdon__back{
+    background-color: var(--menu-color);
+    border:.1rem solid var(--black-color);
+}
+
+.thucdon__front{
+    transition: .7s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.thucdon__back{
+    position: absolute;
+    top:0;
+    bottom:0;
+    backface-visibility: hidden;
+    transition: .7s;
+	transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.mom .thucdon__front{
+	transform: rotateY(-180deg);
+}
+
+.mom .thucdon__back{
+	transform: rotateY(0deg);
+}
+
+.top__thucdon__left img, .top__thucdon__mid img, .top__thucdon__right img{
+	width: 90%;
+	height: 25rem;
+    padding-top: 1rem;
+    margin:0 auto;
+}
+
+.top__thucdon__left p, .top__thucdon__mid p, .top__thucdon__right p{
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--black-color);
+	margin-top: .5rem;
+}
+
+.top__thucdon__left ul li, .top__thucdon__mid ul li, .top__thucdon__right ul li{
+    display: block;
+	font-size: 1.6rem;
+	padding: .3rem 0;
+	color: var(--text-color);
+	border-bottom: .1rem solid var(--text-color);
+}
+
+i.fa-check{
+	padding-right: .5rem;
+	color: green;
+}
+
+.mid__thucdon__left img, .mid__thucdon__mid img, .mid__thucdon__right img{
+	width: 90%;
+	height: 25rem;
+    padding-top: 1rem;
+    margin:0 auto;
+}
+
+.mid__thucdon__left p, .mid__thucdon__mid p, .mid__thucdon__right p{
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--black-color);
+	margin-top: .5rem;
+}
+
+.mid__thucdon__left ul li, .mid__thucdon__mid ul li, .mid__thucdon__right ul li{
+    display: block;
+	font-size: 1.6rem;
+	padding: .3rem 0;
+	color: var(--text-color);
+	border-bottom: .1rem solid var(--text-color);
+}
+
+.bottom__thucdon__left img, .bottom__thucdon__mid img, .bottom__thucdon__right img{
+	width: 90%;
+	height: 25rem;
+    padding-top: 1rem;
+    margin:0 auto;
+}
+
+.bottom__thucdon__left p, .bottom__thucdon__mid p, .bottom__thucdon__right p{
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--black-color);
+	margin-top: .5rem;
+}
+
+.bottom__thucdon__left ul li, .bottom__thucdon__mid ul li, .bottom__thucdon__right ul li{
+    display: block;
+	font-size: 1.6rem;
+	padding: .3rem 0;
+	color: var(--text-color);
+	border-bottom: .1rem solid var(--text-color);
+}
+
+.top__thucdon__back__left img, .top__thucdon__back__mid img, .top__thucdon__back__right img{
+	width: 90%;
+	height: 25rem;
+    padding-top: 1rem;
+    margin:0 auto;
+}
+
+.top__thucdon__back__left p, .top__thucdon__back__mid p, .top__thucdon__back__right p{
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--black-color);
+	margin-top: .5rem;
+}
+
+.top__thucdon__back__left ul li, .top__thucdon__back__mid ul li, .top__thucdon__back__right ul li{
+    display: block;
+	font-size: 1.6rem;
+	padding: .3rem 0;
+	color: var(--text-color);
+	border-bottom: .1rem solid var(--text-color);
+}
+
+/* ==============================  Footer ==============================*/
+
+.footer{
+    margin-top: 2rem;
+    background-color: var(--black-color);
+}
+
+.footer-left p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.footer-right{
+	height: 17rem;
+}
+
+.footer-right p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left:48%;
+}
+
+.footer-right img{
+    padding-left:47%;
+    margin-top: 1rem;
+}

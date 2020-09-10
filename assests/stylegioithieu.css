@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+    font-family: myptsan;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 .8rem;
+}
+
+a{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: myptsan;
+	src: url(ptsans.woff);
+}
+
+@font-face {
+	font-family: mypacifico;
+	src: url(pacifico.woff);
+}
+/* ==============================  Header ==============================*/
+.header__menu__gioithieu{
+	height: 100vh;
+	background-image: url(../img/anh28.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+}
+
+.row__menu{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 100;
+    transition: all .5s ease;
+}
+
+.header__menu__gioithieu img{
+    height: 7rem;
+}
+
+.clouds{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right:0;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.clouds img{
+    position: absolute;
+    height: 100%;
+    animation: cloud calc(20s * var(--i)) linear infinite;
+}
+
+@keyframes cloud{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(200%);
+    }
+}
+
+.nav__menu{
+    text-align: right;
+    line-height: 7rem;
+    margin-right: 3rem;
+}
+
+.nav__menu li a.active{
+    color: var(--active-color);
+}
+
+.nav__menu li a:hover{
+    color: var(--active-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline{
+    padding: .4rem .5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    background: none;
+    border-radius: .5rem;
+    color: var(--text-color);
+    outline: none;
+    border: .2rem solid var(--text-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline:hover{
+    background-color: var(--white-color);
+    color: var(--active-color);
+    cursor: pointer;
+}
+
+.nav__menu li a i{
+    font-size: 2.6rem;
+}
+
+.show-on-tablet{
+    display: none;
+}
+
+.menu-icon{
+    height: 0;
+    text-align: left;
+    font-size: 2.6rem;
+    color: var(--text-color);
+    display: none;
+    position: relative;
+    top:-5rem;
+    left:90%;
+    cursor: pointer;
+}
+
+.menu-icon:hover{
+    color: var(--active-color);
+}
+
+.overlay{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    animation: Opa ease-in-out .15s;
+}
+
+@keyframes Opa{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.sub-menu{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 30rem;
+    height: 100vh;
+    background-color: var(--black-color);
+    display: none;
+    transform-origin: 80% 10%;
+    animation: Scale ease-in .2s;
+}
+
+@keyframes Scale{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+.sub-menu ul{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 4rem;
+}
+
+.sub-menu ul li{
+    margin: 1rem 0;
+}
+
+.sub-menu li a{
+    font-size: 3.6rem;
+}
+
+.sub-menu li a:hover{
+    color: var(--active-color);
+}
+
+.close-menu{
+    position: absolute;
+    top:1rem;
+    right: 2rem;
+}
+
+.close-menu i{
+    font-size: 2.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.close-menu i:hover{
+    color: var(--active-color);
+}
+
+/* ==============================  Main ==============================*/
+.main__content{
+    padding-bottom: 5rem;
+}
+
+.content__left h1{
+	color: var(--text-color);
+	font-size: 2.6rem;
+    margin: 2rem 0;
+    text-align: center;
+    font-family: mypacifico;
+}
+
+.content__left p{
+	font-size: 2.2rem;
+    margin: 1rem 0;
+    text-align: justify;
+	word-spacing: .3rem;
+    color: var(--text-color);
+    margin-bottom: 5rem;
+}
+
+.btn-left{
+    padding:.5rem 4rem;
+	border:.1rem solid var(--black-color);
+	border-radius: 2.5rem .5rem 2.5rem .5rem;
+    background-color: var(--black-color);
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 2.2rem;
+    color: var(--white-color);
+    transition: all .3s ease-in;
+}
+
+.btn-left:hover{
+    border-radius: .5rem 2.5rem .5rem 2.5rem;
+}
+
+.content__right h1{
+	color: var(--text-color);
+	font-size: 2.6rem;
+    margin: 2rem 0;
+    text-align: center;
+    font-family: mypacifico;
+}
+
+.content__right p{
+	font-size: 2.2rem;
+    margin: 1rem 0;
+    text-align: justify;
+	word-spacing: .3rem;
+    color: var(--text-color);
+    margin-bottom: 5rem;
+}
+
+.btn-right{
+    padding:.5rem 4rem;
+	border:.1rem solid var(--black-color);
+	border-radius: 2.5rem .5rem 2.5rem .5rem;
+    background-color: var(--black-color);
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 2.2rem;
+    color: var(--white-color);
+    transition: all .3s ease-in;
+}
+
+.btn-right:hover{
+    border-radius: .5rem 2.5rem .5rem 2.5rem;
+}
+
+/* ==============================  Footer ==============================*/
+
+.footer{
+    background-color: var(--black-color);
+}
+
+.footer-left p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.footer-right{
+	height: 17rem;
+}
+
+.footer-right p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left:48%;
+}
+
+.footer-right img{
+    padding-left:47%;
+    margin-top: 1rem;
+}

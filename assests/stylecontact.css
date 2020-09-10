@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+    font-family: myptsan;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 .8rem;
+}
+
+a{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: myptsan;
+	src: url(ptsans.woff);
+}
+
+@font-face {
+	font-family: mypacifico;
+	src: url(pacifico.woff);
+}
+/* ==============================  Message ==============================*/
+.annoucement{
+    margin: 1rem 1rem;
+    width: auto;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    animation: slide 1.5s linear;
+}
+
+@keyframes slide{
+    from{
+        left:-40rem;
+    }
+    to{
+        left:0rem;
+    }
+}
+
+.message{
+    background-color: var(--egg-blue);
+    width: 25rem;
+    height: 10rem;
+    border-radius: .5rem;
+    box-shadow: .1rem .2rem .5rem var(--black-color);
+}
+
+.message span{
+    margin: .2rem .2rem;
+    font-size: 3rem;
+    color: var(--gallery-color);
+}
+
+.message b{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+
+/* ==============================  Header ==============================*/
+
+.header__menu{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 100;
+    background-color: var(--black-color);
+}
+
+.header__menu img{
+    height: 7rem;
+}
+
+.nav__menu{
+    text-align: right;
+    line-height: 7rem;
+}
+
+.nav__menu li a.active{
+    color: var(--active-color);
+}
+
+.nav__menu li a:hover{
+    color: var(--active-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline{
+    padding: .4rem .5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    background: none;
+    border-radius: .5rem;
+    color: var(--text-color);
+    border: .2rem solid var(--text-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline:hover{
+    background-color: var(--white-color);
+    color: var(--active-color);
+    cursor: pointer;
+}
+
+.nav__menu li a i{
+    font-size: 2.6rem;
+}
+
+.show-on-tablet{
+    display: none;
+}
+
+.menu-icon{
+    height: 0;
+    text-align: left;
+    font-size: 2.6rem;
+    color: var(--text-color);
+    display: none;
+    position: relative;
+    top:-5rem;
+    left:90%;
+    cursor: pointer;
+}
+
+.menu-icon:hover{
+    color: var(--active-color);
+}
+
+.overlay{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    animation: Opa ease-in-out .15s;
+}
+
+@keyframes Opa{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.sub-menu{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 30rem;
+    height: 100vh;
+    background-color: var(--black-color);
+    display: none;
+    transform-origin: 80% 10%;
+    animation: Scale ease-in .2s;
+}
+
+@keyframes Scale{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+.sub-menu ul{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 4rem;
+}
+
+.sub-menu ul li{
+    margin: 1rem 0;
+}
+
+.sub-menu li a{
+    font-size: 3.6rem;
+}
+
+.sub-menu li a:hover{
+    color: var(--active-color);
+}
+
+.close-menu{
+    position: absolute;
+    top:1rem;
+    right: 2rem;
+}
+
+.close-menu i{
+    font-size: 2.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.close-menu i:hover{
+    color: var(--active-color);
+}
+
+/* ==============================  Main ==============================*/
+
+.pic-thucdon {
+    height: 50vh;
+	background-image: url(../img/contactus.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main__contact h1{
+	font-size: 3.2rem;
+	font-weight: bold;
+	color: var(--text-color);
+	margin:3rem 5rem;
+}
+
+.main__contact p{
+	font-size: 1.8rem;
+	font-weight: bold;
+	word-spacing: .3rem;
+	color: var(--text-color);
+	margin:.5rem 5rem;
+}
+
+.main__input input{
+	width: 80%;
+	height: 4rem;
+	margin:1rem 15% 1rem 5%;
+}
+
+.main__input input[type="placeholder"]{
+    font-size: 2rem;
+    color:var(--text-color);
+    padding: 0 1rem;
+}
+
+.main__input input[name="text"]{
+	margin-top: 3rem;
+}
+
+.main__input input[name="lienhe"]{
+    width:15rem; background-color:var(--button-color); border:none;
+    outline:none; 
+    font-size:1.8rem; 
+    border-radius: 2rem 0 2rem 0;
+    cursor: pointer;
+}
+
+.main__input input[name="text5"]{
+	padding: 5rem 0;
+}
+
+/* .btn-lienhe{
+    padding: .5rem 4rem;
+	border:none;
+	border-radius: 2.5rem 1rem 2.5rem 1rem;
+	background-color: var(--button-color);
+	font-size: 2rem;
+	color: var(--text-color);
+    font-weight: bold;
+    margin: 3rem;
+} */
+
+/* ==============================  Footer ==============================*/
+
+.footer{
+    margin-top: 2rem;
+    background-color: var(--black-color);
+}
+
+.footer-left p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.footer-right{
+	height: 17rem;
+}
+
+.footer-right p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left:48%;
+}
+
+.footer-right img{
+    padding-left:47%;
+    margin-top: 1rem;
+}
+
+
+

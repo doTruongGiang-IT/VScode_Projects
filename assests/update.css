@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+    font-family: myptsan;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 .8rem;
+}
+
+a{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: myptsan;
+	src: url(ptsans.woff);
+}
+
+@font-face {
+	font-family: mypacifico;
+	src: url(pacifico.woff);
+}
+
+/* ==============================  Header ==============================*/
+body{
+    background: linear-gradient(to right, #ff105f, #ffad06);
+}
+
+.banner{
+    background-color: var(--active-color);
+    height: 8rem;
+    text-align: center;
+}
+
+.banner p{
+    font-size: 4.5rem;
+    color: var(--black-color);
+    font-weight: 600;
+    font-family: mypacifico;
+    word-spacing: 1rem;
+    line-height: 8rem;
+}
+
+.form{
+    border:.1rem solid var(--text-color);
+    border-radius: .5rem;
+    text-align: center;
+    margin-top: 5rem;
+    background-color: var(--electron-blue);
+}
+
+.form-update input{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#name, #price, #ckbox{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+#btn-update{
+    border:.1rem solid var(--black-color);
+    background-color: var(--button-color);
+    padding: .5rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+#btn-update:hover{
+    cursor: pointer;
+    background-color: var(--egg-blue);
+}

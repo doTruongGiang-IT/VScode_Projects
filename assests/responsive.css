@@ -1,0 +1,267 @@
+/* Mobile and Table */
+@media only screen and (max-width: 1023px){
+    .hide-on-moblie-and-tablet{
+        display: none;
+    }
+}
+/* Table */
+@media only screen and (min-width: 740px) and (max-width:1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+
+    .show-on-tablet{
+        display: block;
+    }
+
+    .slideshow{
+        height: 40rem;
+    }
+
+    .navigation{
+        left:35%;
+    }
+
+    .pic-bbq{
+        height: 35rem;
+    }
+
+    .img1{
+        margin-left: 5rem;
+    }
+    
+    .pic-bbq .btn-thucdon{
+        padding:1rem 3rem;
+        position: relative;
+        left:5rem;
+        top: 30rem;
+    }
+
+    /* .menu-BBQ{
+        margin-top: 40rem;
+    } */
+
+    .infor-restaurant h1{
+        margin-top: 5rem;
+    }
+
+    .flip1, .flip2{
+        padding-top: 5rem;
+        height: 20rem;
+    }
+
+    .salad{
+        height: 40rem;
+    }
+
+    .footer{
+        margin-top: 5rem;
+    }
+
+    .clouds{
+        height: 20vh;
+        overflow: hidden;
+    }
+
+    .header__menu__gioithieu{
+        height: 50vh;
+    }
+
+    #nav__menu{
+        text-align: left;
+        margin-right: 3rem;
+    }
+
+    .header__menu__datban{
+        height: 50vh;
+    }
+
+    .settable__right input[name="time"]{
+        margin: .8rem .5rem;
+    }
+
+    #btn1, #btn2{
+        padding:.5rem 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    #btn1{
+        margin-left: 18%;
+    }
+
+    .main__input input{
+        margin-left: 4rem;
+    }
+
+}
+/* Mobile*/
+@media only screen and (max-width: 739px){
+    .hide-on-moblie{
+        display: none;
+    }
+
+    .show-on-mobile{
+        display: block;
+    }
+    
+    .menu-icon{
+        display: block;
+    }
+
+    .nav__menu li{
+        display: none;
+    }
+
+    .infor h2, p{
+        text-align: justify;
+        font-size: 1rem;
+        margin: 1rem;
+    }
+
+    .infor h2{
+        font-size: 2.2rem;
+    }
+
+    .pic-bbq{
+        height: 20rem;
+    }
+
+    .img1{
+        margin-left: 5rem;
+    }
+    
+    .pic-bbq .btn-thucdon{
+        padding:.5rem .4rem;
+        position: relative;
+        left:0;
+        top: 15rem;
+    }
+
+    /* .menu-BBQ{
+        margin-top: 45rem;
+    } */
+
+    .infor-restaurant h1{
+        margin-top: 5rem;
+    }
+
+    .pic-restaurant{
+        margin-top: 15rem;
+    }
+    
+    .front1, .back1{
+        margin-top: 8rem;
+        height: 5rem;
+        width: 180%;
+    }
+
+    .salad{
+        height: 30rem;
+    }
+
+    .footer{
+        margin-top: 5rem;
+    }
+
+    .clouds{
+        height: 10vh;
+        overflow: hidden;
+    }
+
+    .header__menu__gioithieu{
+        height: 40vh;
+    }
+
+    .content__left h1, p{
+        padding: 0 4rem;
+    }
+
+    .btn-left{
+       margin:0 4rem;
+    }
+
+    .header__menu__datban{
+        height: 30vh;
+    }
+
+    .settable__right{
+        padding: 0 3rem;
+    }
+
+    .settable__right input[name="time"]{
+        margin: .8rem .4rem;
+    }
+
+    .flip__thucdon img{
+        margin-left: 1rem;
+    }
+
+    .menu-title h2{
+        font-size: 2.4rem;
+    }
+
+    #btn1, #btn2{
+        padding:.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    #btn1{
+        margin-left: 10%;
+    }
+
+    .main__contact h1, .main__contact p{
+        margin-left: 1rem;
+    }
+
+    .main__input input{
+        margin-left: 4rem;
+    }
+    
+}
+
+/* PC low */
+@media only screen and (width: 1024px) {
+
+
+    .pic-bbq .img1, .pic-bbq .img2{
+        width: 35%;
+        height: 100%;
+        background-size: 263%;
+    }
+
+    .pic-bbq .img1:hover, .pic-bbq .img2:hover{
+        background-size: 283%;
+        background-position: center;
+    }
+
+    .pic-bbq .btn-thucdon{
+        position: relative;
+        top: 40rem;
+        left: 2.3rem;
+    }
+
+    .res-BBQ{
+        padding:5rem 0;
+    }
+
+    .sign-up input{
+        padding: 1rem 3rem;
+        width: 30rem;
+        margin-top: 3rem;
+        border-radius: 2rem;
+        outline: none;
+        background:rgba(255, 255, 255, .3);
+        border:.1rem solid  transparent;
+    }
+
+    .sign-up .btn-signup{
+        padding:1rem 3rem;
+        font-size: 1.6rem;
+        position: relative;
+        top:3.7rem;
+    }
+
+    .header__menu__datban{
+        height: 50vh;
+    }
+}

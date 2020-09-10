@@ -1,0 +1,820 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: inherit;
+    font-family: myptsan;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 .8rem;
+}
+
+a{
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@font-face {
+	font-family: myptsan;
+	src: url(ptsans.woff);
+}
+
+@font-face {
+	font-family: mypacifico;
+	src: url(pacifico.woff);
+}
+/* ==============================  Message ==============================*/
+.annoucement{
+    margin: 1rem 1rem;
+    width: auto;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    animation: slide 1.5s linear;
+}
+
+@keyframes slide{
+    from{
+        left:-40rem;
+    }
+    to{
+        left:0rem;
+    }
+}
+
+.message{
+    background-color: var(--egg-blue);
+    width: 25rem;
+    height: 10rem;
+    border-radius: .5rem;
+    box-shadow: .1rem .2rem .5rem var(--black-color);
+}
+
+.message span{
+    margin: .2rem .2rem;
+    font-size: 3rem;
+    color: var(--gallery-color);
+}
+
+.message b{
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+/* ==============================  Header ==============================*/
+
+.header__menu{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 100;
+    background-color: var(--black-color);
+}
+
+.header__menu img{
+    height: 7rem;
+}
+
+.nav__menu{
+    text-align: right;
+    line-height: 7rem;
+}
+
+.active{
+    color: var(--active-color);
+}
+
+.nav__menu li a:hover{
+    color: var(--active-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline{
+    padding: .4rem .5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    background: none;
+    border-radius: .5rem;
+    color: var(--text-color);
+    border: .2rem solid var(--text-color);
+    transition: all .3s ease;
+}
+
+.nav__menu li a.hotline:hover{
+    background-color: var(--white-color);
+    color: var(--active-color);
+    cursor: pointer;
+}
+
+.nav__menu li a i{
+    font-size: 2.6rem;
+}
+
+.show-on-tablet{
+    display: none;
+}
+
+.menu-icon{
+    height: 0;
+    text-align: left;
+    font-size: 2.6rem;
+    color: var(--text-color);
+    display: none;
+    position: relative;
+    top:-5rem;
+    left:90%;
+    cursor: pointer;
+}
+
+.menu-icon:hover{
+    color: var(--active-color);
+}
+
+.overlay{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    animation: Opa ease-in-out .15s;
+}
+
+@keyframes Opa{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.sub-menu{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 30rem;
+    height: 100vh;
+    background-color: var(--black-color);
+    display: none;
+    transform-origin: 80% 10%;
+    animation: Scale ease-in .2s;
+}
+
+@keyframes Scale{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+.sub-menu ul{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 4rem;
+}
+
+.sub-menu ul li{
+    margin: 1rem 0;
+}
+
+.sub-menu li a{
+    font-size: 3.6rem;
+}
+
+.sub-menu li a:hover{
+    color: var(--active-color);
+}
+
+.close-menu{
+    position: absolute;
+    top:1rem;
+    right: 2rem;
+}
+
+.close-menu i{
+    font-size: 2.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.close-menu i:hover{
+    color: var(--active-color);
+}
+
+/* ==============================  Slideshow ==============================*/
+.contentSlide{
+    position: relative;
+    background-color: var(--white-color);
+    overflow: auto;
+    display: table;
+}
+
+.slideshow{
+	height: 56rem;
+    overflow: hidden;
+}
+
+.slides{
+    height: 100%;
+	display: flex;
+}
+
+.slide{
+	transition:0.5s;
+	animation: 12s slider infinite; 
+}
+
+.navigation{
+	position: absolute;
+	bottom:1rem;
+	left:40%;
+	display: flex;
+}
+
+.bar{
+	width: 5rem;
+	height: 1rem;
+	border: .2rem solid var(--active-color);
+	margin: .5rem;
+}
+
+label.active, .dot:hover {
+    cursor: pointer;
+    background-color: var(--white-color);
+}
+
+label#lb1:target,
+label#lb2:target,
+label#lb3:target,
+label#lb4:target{
+	background-color: var(--white-color);
+}
+
+input[name="p"]{
+	position: absolute;
+	visibility: hidden;
+}
+
+.slide img{
+	width: 100%;
+	height: 100%;
+	position: relative;
+    top: -.4rem;
+}
+
+input#p1:checked ~ div.s1{
+	margin-left:0;
+}
+
+input#p2:checked ~ div.s1{
+	margin-left:-100%;
+}
+
+input#p3:checked ~ div.s1{
+	margin-left:-200%;
+}
+
+input#p4:checked ~ div.s1{
+	margin-left:-300%;
+}
+
+/* ==============================  Infor-BBQ ==============================*/
+.infor-BBQ{
+    padding-bottom: 5rem;
+}
+
+.infor h2{
+    font-family: mypacifico;
+    font-size: 3.6rem;
+    margin: 1rem 0;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    color: var(--black-color);
+    padding:1rem 5rem;
+}
+
+.infor p{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    padding:1rem 5rem;
+}
+
+.pic-bbq{
+    display: flex;
+	height: 45rem;
+}
+
+.img1{
+	background-image: url("../img/anh6.jpg");
+}
+
+.img2{
+	background-image: url("../img/anh7.jpg");
+}
+
+.img1, .img2{
+	width: 40%;
+	height: 100%;
+	margin-top: 1rem;
+	margin-right: 5rem;
+	background-position: center;
+	background-size: 163%;
+	cursor: zoom-in;
+	transition: 1s ease;
+	float: right;
+}
+
+.img1:hover, .img2:hover{
+	background-size: 183%;
+	background-position: center;
+}
+
+.pic-bbq .btn-thucdon{
+    padding:.5rem 2rem;
+	background-color: var(--black-color);
+	color: var(--white-color);
+	font-size: 1.6rem;
+    border-radius: .3rem;
+	position: relative;
+	top: 40rem;
+	left: 5rem;
+}
+
+.pic-bbq .btn-thucdon:hover{
+	background-color: var(--white-color);
+	color: var(--black-color);
+	cursor: pointer;
+	transition: all 0.5s ease;
+	font-weight: bold;
+}
+
+.fa-star, .fa-heart{
+	padding-right:1rem;
+}
+
+/* ==============================  Menu-BBQ ==============================*/
+
+.menu-BBQ{
+    padding: 2rem 0;
+    background-color: var(--black-color);
+}
+
+.contain-pic{
+    width: 100%;
+    display: flex;
+}
+
+.contain-pic img{
+	width: 30rem;
+	height: 20rem;
+	margin:1rem 1rem;
+	filter: grayscale(100%);
+	transition: .5s ease-in-out;
+}
+
+.contain-pic img:hover{
+	filter: grayscale(0%);
+}
+
+.contain-menu h1{
+	font-size: 3.6rem;
+    padding:1rem 5rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+    font-family: mypacifico;
+}
+
+.contain-menu p{
+	font-size: 1.8rem;
+	word-spacing: .5rem;
+	padding:1rem 5rem;
+    color: var(--text-color);
+    margin-bottom: 5rem;
+}
+
+.contain-menu .btn-menu{
+    padding: .5rem 3rem;
+    border-radius: .5rem 2rem .5rem 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    background:none;
+    border: .2rem solid var(--text-color);
+    margin:5rem;
+}
+
+.contain-menu .btn-menu:hover{
+	background:var(--white-color);
+	border: .2rem solid var(--text-color);
+	transition: 0.5s;
+}
+
+.fa-shopping-bag{
+	color: var(--text-color);
+	padding-right: 1rem;
+}
+
+.contain-menu a{
+	text-decoration: none;
+	color: var(--text-color);
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+/* ==============================  Paralax-BBQ ============================== */
+.salad{
+	width: 100%;
+	height: 55rem;
+	background-image: url(../img/anh34.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.waves{
+    position: absolute;
+    bottom: 0;
+    background:none;
+    width: 100%;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.waves .wave{
+    position: abasolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height: 15rem;
+    background-image: url("../img/wave.png");
+    background-size: 100rem 10rem;
+}
+
+.wave.wave1{
+    animation: wave 15s linear infinite;
+    z-index: 10;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom:0;
+}
+
+.wave.wave2{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    animation: wave-2 10s linear infinite;
+    z-index: 9;
+    opacity: .8;
+    animation-delay: -5s;
+    bottom:1rem;
+}
+
+.wave.wave3{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    animation: wave 10s linear infinite;
+    z-index: 8;
+    opacity: .6;
+    animation-delay: -2s;
+    bottom:1.5rem;
+}
+
+@keyframes wave{
+    0%{
+        background-position-x:0;
+    }
+    100%{
+        background-position-x:100rem;
+    }
+}
+
+@keyframes wave-2{
+    0%{
+        background-position-x:0;
+    }
+    100%{
+        background-position-x:-100rem;
+    }
+}
+
+/* ==============================  Restaurant-BBQ ==============================*/
+.res-BBQ{
+    padding:2rem 0;
+}
+
+.infor-restaurant{
+    height: 40rem;
+}
+
+.infor-restaurant h1{
+    font-family: mypacifico;
+	font-size: 3.6rem;
+    padding:1rem 5rem;
+    margin:1rem 0;
+	color: var(--text-color);
+}
+
+.infor-restaurant p{
+	font-size: 1.8rem;
+	word-spacing: .5rem;
+	color: var(--text-color);
+    padding:0 5rem; 
+    margin-bottom: 5rem;
+}
+
+.infor-restaurant .btn-res{
+    padding:.5rem 2rem;
+	border-radius: 2rem .5rem 2rem .5rem;
+	background:none;
+	border: .2rem solid var(--text-color);
+    margin: 5rem 5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: 0.5s;
+}
+
+.infor-restaurant .btn-res:hover{
+    border: .2rem solid var(--text-color);
+    border-radius: .5rem 2rem .5rem 2rem;
+}
+
+.infor-restaurant .btn-res:hover .fa-search{
+	transform: rotate(90deg);
+    transition: .7s ease;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.fa-search{
+	color: var(--text-color);
+	padding-right: 1rem;
+	transition: .7s ease;
+}
+
+.infor-restaurant a{
+	text-decoration: none;
+	color:  var(--text-color);
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+.pic-restaurant{
+	height: 40rem;
+	perspective: 100rem;
+	transform-style: preserve-3d;
+}
+
+.pic-restaurant .flip1{
+	width: 40%;
+	height: 35rem;
+	float: left;
+	margin-left: 15%;
+	margin-top: 2.5rem;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: .7s;
+}
+
+.front1 img, .back1 img{
+    width: 100%;
+    height: 35rem;
+	border-radius: .8rem;
+}
+
+.flip1 .front1{
+	position: absolute;
+	backface-visibility: hidden;
+	transition: .7s;
+	transform-style: preserve-3d;
+	z-index: 100;
+	border-radius: .8rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
+}
+
+.flip1 .back1{
+	position: absolute;
+	backface-visibility: hidden;
+	transition: .7s;
+	transform-style: preserve-3d;
+	z-index: 99;
+	border-radius: .8rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
+	transform: rotateY(180deg);
+}
+
+.flip1:hover .front1{
+	transform: rotateY(-180deg);
+}
+
+.flip1:hover .back1{
+	transform: rotateY(0deg);
+}
+
+.pic-restaurant .flip2{
+	width: 40%;
+	height: 35rem;
+	float: left;
+	margin-left: 5%;
+	margin-top: 2.5rem;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: .7s;
+}
+
+.front2 img, .back2 img{
+	width: 100%;
+	height: 35rem;
+	border-radius: .8rem;
+}
+
+.flip2 .front2{
+	position: absolute;
+	backface-visibility: hidden;
+	transition: .7s;
+	transform-style: preserve-3d;
+	z-index: 100;
+	border-radius: .8rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
+}
+
+.flip2 .back2{
+	position: absolute;
+	backface-visibility: hidden;
+	transition: .7s;
+	transform-style: preserve-3d;
+	z-index: 99;
+	border-radius: .8rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,0.5);
+	transform: rotateY(180deg);
+}
+
+.flip2:hover .front2{
+	transform: rotateY(-180deg);
+}
+
+.flip2:hover .back2{
+	transform: rotateY(0deg);
+}
+
+/* ==============================  Signup-BBQ ==============================*/
+
+.sign-up{
+    height: 10rem;
+    background-image: url("../img/anh16.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+}
+
+.sign-up .overlay{
+    height: 10rem;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.sign-up span{
+    line-height: 10rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white-color);
+}    
+
+.sign-up input{
+    padding: 1rem 3rem;
+    width: 40rem;
+    margin-top: 3rem;
+    border-radius: 2rem;
+    outline: none;
+    background:rgba(255, 255, 255, .3);
+    border:.1rem solid  transparent;
+}
+
+.sign-up input::placeholder{
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+
+.sign-up .btn-signup{
+    padding:1rem 5rem;
+    border: .1rem solid var(--button-color);
+    background-color: var(--button-color);
+    border-radius: .5rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+    top:3rem;
+}
+
+/* ==============================  Cousine-BBQ ==============================*/
+.cousine-BBQ{
+    padding:2rem 0;
+}
+
+.cousine-BBQ img{
+    max-height: 50rem;
+}
+
+.infor-cousine h1{
+	font-size: 3.6rem;
+    padding:1rem 5rem;
+    font-family: mypi;
+    color: var(--text-color);
+    font-family: mypacifico;
+}
+
+.infor-cousine p{
+	font-size: 1.8rem;
+	word-spacing: .3rem;
+	padding:0 5rem;
+	color: var(--text-color);
+}
+
+.gallery{
+	width: 100%;
+	height: 28rem;
+	margin-top: 2rem;
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+}
+
+.gallery .box{
+	width: 20rem;
+	height: 20rem;
+	margin-top: 1rem;
+}
+
+.gallery .box img{
+	width: 20rem;
+	height: 20rem;
+}
+
+.gallery .box .box-infor{
+    clip-path: circle(0% at 0% 0%);
+    height: 20rem;
+    width: 20rem;
+	background-color: var(--gallery-color);
+	position: absolute;
+	top:1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: .8;
+    overflow: hidden;
+	transition: .7s;
+}
+
+.gallery .box:hover .box-infor{
+    clip-path: circle(100%);
+}
+
+/* ==============================  Footer ==============================*/
+.footer{
+    background-color: var(--black-color);
+}
+
+.footer-left p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
+.footer-right{
+	height: 17rem;
+}
+
+.footer-right p{
+	font-size: 1.6rem;
+	color: var(--text-color);
+	padding-top: 2rem;
+	padding-left:48%;
+}
+
+.footer-right img{
+    padding-left:47%;
+    margin-top: 1rem;
+}
+
